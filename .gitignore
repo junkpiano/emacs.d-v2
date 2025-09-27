@@ -1,0 +1,50 @@
+### Emacs autosaves / locks
+*~
+\#*\#
+/auto-save-list/
+/tramp
+/.emacs.desktop
+/.emacs.desktop.lock
+
+### Byte-compiled & native-compiled outputs
+*.elc
+*.eln
+/eln-cache/
+/var/eln-cache/
+
+### Generic caches
+/.cache/
+
+### package.el (ignore if present)
+/elpa/
+
+### straight.el artifacts (keep only the lock file)
+# These are build artifacts and vendor clones; do not track them.
+/straight/build/
+/straight/repos/
+/straight/var/
+/straight/modified/
+/straight/build-cache.el
+
+# Track the versions lock file, ignore everything else in versions/
+/straight/versions/*
+!/straight/versions/
+!/straight/versions/default.el
+
+### User state files (should not be versioned)
+/eshell/history
+/eshell/lastdir
+/url/
+/recentf
+/bookmarks
+/saveplace
+/.lsp-session-v1
+/projectile-bookmarks.eld
+/transient/
+/network-security.data
+/elfeed/
+/org-roam.db
+
+### OS-specific
+.DS_Store
+Thumbs.db

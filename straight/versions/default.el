@@ -1,0 +1,12 @@
+(("bind-key" . "ec9d0505febe2556b47457355763f5f1408a35ac")
+ ("btc-ticker.el" . "1f879941847f34db9671988c7c23a6ea39c09838")
+ ("el-get" . "d3815eb03df07d755a14e6be2c5305daa47ba28b")
+ ("emacsmirror-mirror" . "cf8a401b1c9d2b94b64d6a04c24cc5e2303f0d58")
+ ("gnu-elpa-mirror" . "25710eb3c9540aa6de160e5828d93ae6b85394c0")
+ ("melpa" . "2dbcb69f603a94b6abc196d45ec5d2fb2ddc1344")
+ ("mozc" . "2efeece0ae519a17ffceaa766b5be1525f7cec7b")
+ ("mozc-el-extensions" . "060797a6e570cf21c274edfcb14a26e710a5449e")
+ ("nongnu-elpa" . "f5b312b749043106a17f388ea3d153239b9bd541")
+ ("straight.el" . "0ad6fd8f37bd918c72989df18c76a68649f0a372")
+ ("use-package" . "29552cf3af755f17e297862a7f635c469a28b09f"))
+:epsilon
