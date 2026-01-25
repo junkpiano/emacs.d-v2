@@ -24,7 +24,7 @@
 (set-fontset-font t 'emoji (font-spec :family "Noto Color Emoji") nil 'prepend)
 
 (setq face-font-rescale-alist
-      '(("Noto Sans Mono CJK JP" . 1.00)   ;; 1.00〜1.05あたりで微調整
+      '(("Noto Sans Mono CJK JP" . 1.00)   ;; Fine-tune around 1.00–1.05
         ("Source Han Code JP"    . 1.05)
         ("PlemolJP.*"            . 1.00)))
 
@@ -51,8 +51,8 @@
 (use-package btc-ticker
   :straight (btc-ticker :type git
                         :host github
-			:repo "junkpiano/btc-ticker.el"
-			:files ("btc-ticker.el"))
+                        :repo "junkpiano/btc-ticker.el"
+                        :files ("btc-ticker.el"))
   :custom
   (btc-ticker-currency "JPY")
   (btc-ticker-interval 60)
@@ -60,14 +60,21 @@
   (btc-ticker-mode 1))
 
 (use-package mozc
-  :straight (mozc
-	     :type git
-	     :host github
-	     :repo "google/mozc"
-	     :files ("src/unix/emacs/mozc.el"))
   :custom
   (default-input-method "japanese-mozc")
+  (mozc-leim-title "[あ]")
+  ;; GUI: overlay is the most stable
   (mozc-candidate-style 'overlay))
+
+(use-package popup)
+(use-package mozc-popup
+  :after mozc
+  :config
+  ;; TTY only
+  (unless (display-graphic-p)
+    (require 'mozc-popup)
+    (setq mozc-candidate-style 'popup)))
+
 
 (use-package mozc-cursor-color
   :straight (mozc-cursor-color
@@ -79,3 +86,29 @@
   :custom
   (mozc-cursor-color-alist
    '((direct . "#BD93F9") (hiragana . "#CC3333") (read-only . "#84A0C6"))))
+
+;; ============================
+;; Org-mode for asset tracking
+;; ============================
+
+;; org is built-in, just configure it
+(require 'org)
+
+;; Do not ask confirmation for babel evaluation
+(setq org-confirm-babel-evaluate nil)
+
+;; Log timestamp when TODO is completed
+(setq org-log-done 'time)
+
+;; Better handling of numeric values in tables
+(setq org-table-number-fraction 3)
+
+(use-package gnuplot :straight t)
+
+(org-defkey org-mode-map (kbd "C-c \" g") 'org-plot/gnuplot)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((gnuplot . t)))
+
+(setq org-confirm-babel-evaluate nil)

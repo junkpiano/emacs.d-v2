@@ -53,4 +53,3 @@ For more information, see the [straight.el official documentation](https://githu
 
 Each file and package follows its respective license.
 
-
