@@ -26,30 +26,25 @@ fc-list | grep -Ei "ricty|noto.*cjk|emoji"
 
 ## Features
 
-- Package management using [straight.el](https://github.com/radian-software/straight.el)
-- Support for mozc (Japanese input method)
+### Package Management
 
-## About mozc Installation
+- straight.el - Package manager
+- use-package - Declarative package configuration
 
-To use mozc, you need to build it from source. This is necessary because the latest version of Emacs is not compatible with the mozc packages distributed by most package managers. Building mozc requires [Bazel](https://bazel.build/) to be installed.
-It is recommended to install Bazel via [Bazelisk](https://github.com/bazelbuild/bazelisk). Please refer to the Bazelisk GitHub repository for installation instructions.
+### Packages
 
-### Example: Building mozc
+- btc-ticker - Bitcoin price in mode line (JPY, 60s interval)
+- mozc - Japanese input with popup candidates (TTY) and cursor colors
+- org-mode - Babel eval enabled, done timestamps, gnuplot support
+- company - Global autocomplete (120ms delay, 1 char prefix)
+- rustic + lsp-mode - Rust dev with rust-analyzer, cargo fmt on save
 
-1. Install Bazel.
-2. Obtain the mozc source code.
-3. Build mozc using Bazel.
-4. Configure Emacs to use the built mozc.
+### Custom Keybindings
 
-For detailed instructions, please refer to the [official mozc repository](https://github.com/google/mozc) or your distribution's documentation.
+- C-c " g (org-mode) - Plot gnuplot
+- TAB (company active) - Complete selection
+- C-c C-f (rustic-mode) - cargo fmt (package)
+- C-c C-F (rustic-mode) - cargo fmt (workspace)
 
-## About straight.el
 
-This configuration uses straight.el for package management. It will be installed automatically on the first launch.
-
-For more information, see the [straight.el official documentation](https://github.com/radian-software/straight.el).
-
-## License
-
-Each file and package follows its respective license.
 
