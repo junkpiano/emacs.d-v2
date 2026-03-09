@@ -174,3 +174,11 @@ If WORKSPACE is non-nil, run with `--all` (format the whole workspace)."
   (define-key rustic-mode-map (kbd "C-c C-f") (lambda () (interactive) (my/cargo-fmt nil)))
   (define-key rustic-mode-map (kbd "C-c C-F") (lambda () (interactive) (my/cargo-fmt t))))
 
+;; Turn off the annoying beeping sound
+(cond
+ ((string-equal system-type "windows-nt") ; Windows
+  (progn
+    (set-message-beep 'silent)))
+ ((string-equal system-type "gnu/linux") ; Linux
+  (progn
+    (setq visible-bell t))))
