@@ -1,5 +1,5 @@
 
-> **Note:** This Emacs setup is intended for Ubuntu 22.04.
+> **Note:** This Emacs setup is intended for Ubuntu 24.04 & 22.04.
 
 # .emacs.d Configuration Repository
 
