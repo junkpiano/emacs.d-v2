@@ -37,14 +37,12 @@ fc-list | grep -Ei "ricty|noto.*cjk|emoji"
 - mozc - Japanese input with popup candidates (TTY) and cursor colors
 - org-mode - Babel eval enabled, done timestamps, gnuplot support
 - company - Global autocomplete (120ms delay, 1 char prefix)
-- rustic + lsp-mode - Rust dev with rust-analyzer, cargo fmt on save
+- rust-ts-mode + eglot - Rust dev with rust-analyzer, cargo fmt on save
 
 ### Custom Keybindings
 
 - C-c " g (org-mode) - Plot gnuplot
 - TAB (company active) - Complete selection
-- C-c C-f (rustic-mode) - cargo fmt (package)
-- C-c C-F (rustic-mode) - cargo fmt (workspace)
-
-
+- C-c C-f (Rust buffers) - cargo fmt (package)
+- C-c C-F (Rust buffers) - cargo fmt (workspace)
 
