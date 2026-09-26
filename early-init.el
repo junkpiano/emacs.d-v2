@@ -28,6 +28,16 @@
 
 (set-fontset-font t 'emoji (font-spec :family "Noto Color Emoji") nil 'prepend)
 
+;; Currency Symbols block (U+20A0-U+20BF).  Ricty Diminished has no glyph for
+;; U+20BF BITCOIN SIGN (used by btc-ticker's mode-line format), so it renders
+;; as tofu without this.  Noto Sans Mono is the only installed font covering
+;; U+20BF; it lives in ~/.local/share/fonts (note: "Noto Sans Symbols 2" does
+;; NOT cover this block, and Noto Sans Mono is a different family from the
+;; "Noto Sans Mono CJK JP" used above).
+(set-fontset-font t '(#x20a0 . #x20bf)
+                  (font-spec :family "Noto Sans Mono")
+                  nil 'append)
+
 (setq face-font-rescale-alist
       '(("Noto Sans Mono CJK JP" . 1.00)   ;; Fine-tune around 1.00–1.05
         ("Source Han Code JP"    . 1.05)

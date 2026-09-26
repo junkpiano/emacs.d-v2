@@ -17,6 +17,12 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+;; This config uses the Org bundled with Emacs.  Without this, any package
+;; declaring `org' as a dependency makes straight clone a second, newer Org,
+;; which then collides with the built-in one loaded below ("Org version
+;; mismatch").  Treat org as built-in so straight skips it.
+(add-to-list 'straight-built-in-pseudo-packages 'org)
+
 ;; Install from your local git repo via file:// URL
 (use-package btc-ticker
   :straight (btc-ticker :type git
@@ -125,6 +131,18 @@
    (emacs-lisp . t)
    (shell . t)
    (python . t)))
+
+;; Live HTML preview of the current org buffer (M-x org-preview-html-mode)
+(use-package org-preview-html
+  :straight (org-preview-html :type git
+                              :host github
+                              :repo "jakebox/org-preview-html"
+                              :files ("org-preview-html.el"))
+  :commands (org-preview-html-mode org-preview-html-refresh)
+  :custom
+  ;; 'xwidget is nicer but this Emacs is built without xwidget support
+  (org-preview-html-viewer 'eww)
+  (org-preview-html-refresh-configuration 'save))
 
 ;; 1) Company: global enable + sane defaults
 (use-package company
